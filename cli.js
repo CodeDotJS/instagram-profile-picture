@@ -3,7 +3,7 @@
 
 const ipp = require('./index.js');
 
-ipi('9gag').then(user => {
+ipp('9gag').then(user => {
 	console.log(user);
 });
 
