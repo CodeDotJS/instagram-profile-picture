@@ -17,8 +17,7 @@ npm install --save instagram-profile-picture
 
 ## Usage
 
-- `Profile Picture` __`:`__ `Full resolution`
-
+- __`Full size`__
 ```js
 const ipp = require('instagram-profile-picture');
 
@@ -28,8 +27,7 @@ ipp('9gag').then(user => {
 });
 ```
 
-- `Profile Picture` __`:`__ `Medium resolution`
-
+- __`Medium size`__
 ```js
 ipp.medium('9gag').then(user => {
   console.log(user);
@@ -37,13 +35,32 @@ ipp.medium('9gag').then(user => {
 });
 ```
 
-- `Profile Picture` __`:`__ `Low resolution`
-
+- __`Small size`__
 ```js
 ipp.small('9gag').then(user => {
   console.log(user);
   // => https://scontent-sit4-1.cdninstagram.com/7...jpg
 });
+```
+
+### Extra
+
+Additonally, you can get downloadable link to the publically shared media __`(images/videos)`__
+
+- __`Images`__
+```js
+ipp.image('https://www.instagram.com/p/BRfTRCQBeHw/').then(img => {
+  console.log(img);
+// => "https://instagram.fpat1-1.fna....9017349928908750848_n.jpg"
+});
+```
+
+- __`Videos`__
+```js
+ipp.video('https://www.instagram.com/p/BTTuhDsgtCs/').then(vid => {
+  console.log(vid);
+  // => "https://instagram.fpat1-1.fn....9178079197241802752_n.mp4"
+})
 ```
 
 ## Related
