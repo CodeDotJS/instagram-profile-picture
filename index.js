@@ -43,3 +43,27 @@ instaProfileImage.small = username => {
 		return res.body.user.profile_pic_url || '';
 	});
 };
+
+instaProfileImage.image = source => {
+	if (typeof source !== 'string') {
+		throw new TypeError(`Expected a string, got ${typeof source}`);
+	}
+
+	const url = source.split('?')[0];
+
+	return got(`${url}?__a=1`, {json: true}).then(res => {
+		return res.body.graphql.shortcode_media.display_url || '';
+	});
+};
+
+instaProfileImage.video = source => {
+	if (typeof source !== 'string') {
+		throw new TypeError(`Epxected a string, got ${typeof source}`);
+	}
+
+	const url = source.split('?')[0];
+
+	return got(`${url}?__a=1`, {json: true}).then(res => {
+		return res.body.graphql.shortcode_media.video_url || '';
+	});
+};
