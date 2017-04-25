@@ -45,7 +45,7 @@ ipp.small('9gag').then(user => {
 
 ### Extra
 
-Additonally, you can get downloadable link to the publically shared media __`(images/videos)`__
+Additionally, you can get downloadable link to the publically shared media __`(images/videos)`__
 
 - __`Images`__
 ```js
