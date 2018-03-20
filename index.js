@@ -2,8 +2,10 @@
 
 const got = require('got');
 
-const replace = arg => {
-	return arg.replace('/s320x320', '');
+const cdn = 'https://scontent-lga3-1.cdninstagram.com/';
+
+const replaceCDN = link => {
+	return `${cdn}${link.split('/vp/')[1].replace('/s320x320/', '/s1080x1080/')}`;
 };
 
 const highDefinition = username => {
@@ -14,7 +16,7 @@ const highDefinition = username => {
 	const url = `https://www.instagram.com/${username}/?__a=1`;
 
 	return got(`${url}`, {json: true}).then(res => {
-		return replace(res.body.user.profile_pic_url_hd) || '';
+		return replaceCDN(res.body.graphql.user.profile_pic_url_hd) || '';
 	});
 };
 
@@ -28,7 +30,7 @@ instaProfileImage.medium = username => {
 	const url = `https://www.instagram.com/${username}/?__a=1`;
 
 	return got(`${url}`, {json: true}).then(res => {
-		return res.body.user.profile_pic_url_hd || '';
+		return res.body.graphql.user.profile_pic_url_hd || '';
 	});
 };
 
@@ -40,7 +42,7 @@ instaProfileImage.small = username => {
 	const url = `https://www.instagram.com/${username}/?__a=1`;
 
 	return got(`${url}`, {json: true}).then(res => {
-		return res.body.user.profile_pic_url || '';
+		return res.body.graphql.user.profile_pic_url || '';
 	});
 };
 
