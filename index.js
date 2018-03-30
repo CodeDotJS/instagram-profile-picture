@@ -1,22 +1,19 @@
 'use strict';
 
 const got = require('got');
-
-const cdn = 'https://scontent-lga3-1.cdninstagram.com/';
-
-const replaceCDN = link => {
-	return `${cdn}${link.split('/vp/')[1].replace('/s320x320/', '/s1080x1080/')}`;
-};
+const user = require('./user.js');
 
 const highDefinition = username => {
 	if (typeof username !== 'string') {
 		throw new TypeError(`Expected a string, got ${typeof username}`);
 	}
 
-	const url = `https://www.instagram.com/${username}/?__a=1`;
+	return user(username).then(userid => {
+		const url = `https://i.instagram.com/api/v1/users/${userid}/info/`;
 
-	return got(`${url}`, {json: true}).then(res => {
-		return replaceCDN(res.body.graphql.user.profile_pic_url_hd) || '';
+		return got(url, {json: true}).then(res => {
+			return res.body.user.hd_profile_pic_url_info.url;
+		});
 	});
 };
 
