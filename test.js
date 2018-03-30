@@ -4,7 +4,7 @@ import fn from './';
 test('full', async t => {
 	const ipp = await fn('iama_rishi');
 
-	t.is(ipp, 'https://scontent-lga3-1.cdninstagram.com/19440301fb5b335423628339609b6896/5B395F35/t51.2885-19/s1080x1080/28766707_802539189946973_8583808796109832192_n.jpg');
+	t.is(ipp, 'https://instagram.fdel3-1.fna.fbcdn.net/vp/4005e44adebfe7a8fb985593e41c86ab/5B5BAE8C/t51.2885-19/29090932_588149134878706_555805880914804736_n.jpg');
 });
 
 test('medium', async t => {
