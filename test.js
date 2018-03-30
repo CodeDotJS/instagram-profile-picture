@@ -4,19 +4,19 @@ import fn from './';
 test('full', async t => {
 	const ipp = await fn('iama_rishi');
 
-	t.is(ipp, 'https://instagram.fdel3-1.fna.fbcdn.net/vp/4005e44adebfe7a8fb985593e41c86ab/5B5BAE8C/t51.2885-19/29090932_588149134878706_555805880914804736_n.jpg');
+	t.is(ipp, 'https://scontent-iad3-1.cdninstagram.com/vp/4005e44adebfe7a8fb985593e41c86ab/5B5BAE8C/t51.2885-19/29090932_588149134878706_555805880914804736_n.jpg');
 });
 
 test('medium', async t => {
 	const med = await fn.medium('iama_rishi');
 
-	t.is(med, 'https://scontent-iad3-1.cdninstagram.com/vp/19440301fb5b335423628339609b6896/5B395F35/t51.2885-19/s320x320/28766707_802539189946973_8583808796109832192_n.jpg');
+	t.is(med, 'https://scontent-iad3-1.cdninstagram.com/vp/6ec119cbe72cb98e6a62e620ca3b77eb/5B740135/t51.2885-19/s320x320/29090932_588149134878706_555805880914804736_n.jpg');
 });
 
 test('small', async t => {
 	const sm = await fn.small('iama_rishi');
 
-	t.is(sm, 'https://scontent-iad3-1.cdninstagram.com/vp/3d1cf3d9f9504bf031c1056878b20412/5B4EA3C5/t51.2885-19/s150x150/28766707_802539189946973_8583808796109832192_n.jpg');
+	t.is(sm, 'https://scontent-iad3-1.cdninstagram.com/vp/718ca75b8b173c6fa89af70ccb93afb9/5B533938/t51.2885-19/s150x150/29090932_588149134878706_555805880914804736_n.jpg');
 });
 
 test('image', async t => {
@@ -28,5 +28,5 @@ test('image', async t => {
 test('video', async t => {
 	const vid = await fn.video('https://www.instagram.com/p/BTTuhDsgtCs/');
 
-	t.is(vid, 'https://scontent-iad3-1.cdninstagram.com/vp/ce165cb680827bea41f2b4d5783e6c41/5AB39926/t50.2886-16/18190450_471341926537056_7672813376128417792_n.mp4');
+	t.is(vid, 'https://scontent-iad3-1.cdninstagram.com/vp/3583c44bc514f37583aeefeab70707a3/5AC0C826/t50.2886-16/18190450_471341926537056_7672813376128417792_n.mp4');
 });
