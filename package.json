@@ -15,7 +15,8 @@
     "test": "xo && ava"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "user.js"
   ],
   "keywords": [
     "fetch",
