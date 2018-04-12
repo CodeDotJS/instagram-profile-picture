@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codedotjs/instagram-profile-picture.git"
+    "url": "git+https://github.com/CodeDotJS/instagram-profile-picture.git"
   },
-  "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.com)",
+  "author": "Rishi Giri <rushforlinux@gmail.com> (rishigiri.ml)",
   "engines": {
     "node": ">=4"
   },
@@ -42,8 +42,8 @@
     "esnext": true
   },
   "bugs": {
-    "url": "https://github.com/codedotjs/instagram-profile-picture/issues"
+    "url": "https://github.com/CodeDotJS/instagram-profile-picture/issues"
   },
-  "homepage": "https://github.com/codedotjs/instagram-profile-picture#readme",
+  "homepage": "https://github.com/CodeDotJS/instagram-profile-picture#readme",
   "main": "index.js"
 }
