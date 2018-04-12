@@ -17,7 +17,7 @@ npm install --save instagram-profile-picture
 
 ## Usage
 
-- __`Full size`__
+- __`Full size`__ `:` __`1080x1080 px`__
 ```js
 const ipp = require('instagram-profile-picture');
 
@@ -27,7 +27,15 @@ ipp('9gag').then(user => {
 });
 ```
 
-- __`Medium size`__
+- __`Regular size`__ `:` __`640x640 px`__
+```js
+ipp.regular('instagram').then(user => {
+  console.log(user);
+  // => https://scontent-sit4-1.cdninstagram.com/7...jpg
+});
+```
+
+- __`Medium size`__ `:` __`320x320 px`__
 ```js
 ipp.medium('9gag').then(user => {
   console.log(user);
@@ -35,7 +43,7 @@ ipp.medium('9gag').then(user => {
 });
 ```
 
-- __`Small size`__
+- __`Small size`__ `:` __`150x150 px`__
 ```js
 ipp.small('9gag').then(user => {
   console.log(user);
@@ -69,4 +77,4 @@ ipp.video('https://www.instagram.com/p/BTTuhDsgtCs/').then(vid => {
 
 ## License
 
-MIT &copy; [Rishi Giri](http://rishigiri.com);
+MIT &copy; [Rishi Giri](http://rishigiri.ml);
