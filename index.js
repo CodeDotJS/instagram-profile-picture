@@ -19,6 +19,26 @@ const highDefinition = username => {
 
 const instaProfileImage = module.exports = username => highDefinition(username);
 
+instaProfileImage.regular = username => {
+	if (typeof username !== 'string') {
+		throw new TypeError(`Expected a string, got ${typeof username}`);
+	}
+
+	return user(username).then(userid => {
+		const url = `https://i.instagram.com/api/v1/users/${userid}/info/`;
+
+		return got(url, {json: true}).then(res => {
+			return res.body.user.hd_profile_pic_versions[1].url;
+		}).catch(err => {
+			if (err) {
+				return {
+					error: 'The requested size is currently not available'
+				};
+			}
+		});
+	});
+};
+
 instaProfileImage.medium = username => {
 	if (typeof username !== 'string') {
 		throw new TypeError(`Expected a string, got ${typeof username}`);
