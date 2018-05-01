@@ -44,10 +44,10 @@ instaProfileImage.medium = username => {
 		throw new TypeError(`Expected a string, got ${typeof username}`);
 	}
 
-	const url = `https://www.instagram.com/${username}/?__a=1`;
+	const url = `https://www.instagram.com/${username}`;
 
-	return got(`${url}`, {json: true}).then(res => {
-		return res.body.graphql.user.profile_pic_url_hd || '';
+	return got(url).then(res => {
+		return res.body.split(',"profile_pic_url_hd":"')[1].split('",')[0];
 	});
 };
 
@@ -56,10 +56,10 @@ instaProfileImage.small = username => {
 		throw new TypeError(`Expected a string, got ${typeof username}`);
 	}
 
-	const url = `https://www.instagram.com/${username}/?__a=1`;
+	const url = `https://www.instagram.com/${username}`;
 
-	return got(`${url}`, {json: true}).then(res => {
-		return res.body.graphql.user.profile_pic_url || '';
+	return got(url).then(res => {
+		return res.body.split('"profile_pic_url":"')[1].split('",')[0] || '';
 	});
 };
 
